@@ -1,26 +1,16 @@
 #!/usr/bin/env bash
-
-# Function to display information for a subdomain
-display_info() {
-    local domain=$1
-    local subdomain=$2
-    local record_type=$(dig $subdomain.$domain | awk '/ANSWER SECTION/ {getline; print $4}')
-    local destination=$(dig $subdomain.$domain | awk '/ANSWER SECTION/ {getline; print $5}')
-
-    echo "The subdomain $subdomain is a $record_type record and points to $destination"
-}
-
-# Main script
-if [ "$#" -eq 1 ]; then
-    # Display information for default subdomains
-    display_info $1 www
-    display_info $1 lb-01
-    display_info $1 web-01
-    display_info $1 web-02
-elif [ "$#" -eq 2 ]; then
-    # Display information for specified subdomain
-    display_info $1 $2
+# Bash script that will display information about subdomains
+domain () {
+if [ "$2" ];
+then
+    echo -n "The subdomain $2 is a"
+    dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk '{print " " $4 " record and points to " $5}' | tail -n 1
 else
-    echo "Usage: $0 <domain> [subdomain]"
-    exit 1
+    for i in www lb-01 web-01 web-02
+    do
+        echo -n "The subdomain $i is a"
+        dig "$i.$1" | grep -A1 'ANSWER SECTION:' | awk '{print " " $4 " record and points to " $5}' | tail -n 1
+    done
 fi
+}
+domain "$1" "$2"
