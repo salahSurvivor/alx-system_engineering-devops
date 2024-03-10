@@ -1,7 +1,8 @@
 <h1>Postmortem</h1>
 
-![image](https://github.com/salahSurvivor/alx-system_engineering-devops/assets/106560141/2c3ca880-f459-4e44-a11a-0014f5a610f2)
+![giphy](https://github.com/salahSurvivor/alx-system_engineering-devops/assets/106560141/f2811d34-2c03-4525-b824-b7e06b68d055)
 
+<h1></h1>
 
 🚀 Oops, We Did It Again: A Tale of Tech Turmoil and Triumph 🚀
 
