@@ -1,6 +1,6 @@
 <h1>Postmortem</h1>
 
-![Uploading the-whole-system-is-breaking-down-seinfeld.gif…]()
+![image](https://github.com/salahSurvivor/alx-system_engineering-devops/assets/106560141/2c3ca880-f459-4e44-a11a-0014f5a610f2)
 
 
 🚀 Oops, We Did It Again: A Tale of Tech Turmoil and Triumph 🚀
